@@ -9,6 +9,8 @@ Module Module1
     Dim notifyIcon As NotifyIcon
 
     Private WithEvents fileSystemWatcher As FileSystemWatcher
+    Public fileslist As New List(Of String)
+
 
     Sub Main()
         Application.EnableVisualStyles()
@@ -58,37 +60,50 @@ Module Module1
         ' Handle the file creation event
         Dim zipFilePath As String = e.FullPath
 
-        UnblockFile(zipFilePath)
 
-        ' Create a folder with the same name as the zip file (without extension)
-        Dim destinationFolder As String = Path.Combine(Path.GetDirectoryName(zipFilePath), Path.GetFileNameWithoutExtension(zipFilePath))
 
-        Try
-            ' Create the destination folder
-            Directory.CreateDirectory(destinationFolder)
+        If Not fileslist.Contains(zipFilePath) Then
+            'MsgBox(zipFilePath)
+            UnblockFile(zipFilePath)
+            ' Create a folder with the same name as the zip file (without extension)
+            Dim destinationFolder As String = Path.Combine(Path.GetDirectoryName(zipFilePath), Path.GetFileNameWithoutExtension(zipFilePath))
 
-            ' Unzip the contents of the zip file into the destination folder
-            ZipFile.ExtractToDirectory(zipFilePath, destinationFolder)
+            Try
+                ' Create the destination folder
+                Directory.CreateDirectory(destinationFolder)
 
-            ' Add your additional processing logic here if needed
-            Process.Start(destinationFolder)
+                ' Unzip the contents of the zip file into the destination folder
+                ZipFile.ExtractToDirectory(zipFilePath, destinationFolder)
 
-            ' For example, you might want to log the successful extraction or perform other actions
-            ' You can use the destinationFolder variable to reference the folder where the contents were extracted.
+                ' Add your additional processing logic here if needed
+                Process.Start(destinationFolder)
 
-        Catch ex As Exception
-            ' Handle any exceptions that may occur during the extraction process
-            ' Log or display an error message as needed
-            Console.WriteLine(ex.ToString)
+                ' For example, you might want to log the successful extraction or perform other actions
+                ' You can use the destinationFolder variable to reference the folder where the contents were extracted.
+                fileslist.Add(zipFilePath)
 
-        End Try
+            Catch ex As Exception
+                ' Handle any exceptions that may occur during the extraction process
+                ' Log or display an error message as needed
+                Console.WriteLine(ex.ToString)
+
+            End Try
+        End If
+
     End Sub
 
     Public Sub UnblockFile(filePath As String)
+
         Try
-            ' Create the Zone.Identifier alternate data stream
-            Dim zoneIdentifier As String = "[ZoneTransfer]" & vbCrLf & "ZoneId=3"
-            File.WriteAllText(filePath & ":Zone.Identifier", zoneIdentifier, Encoding.ASCII)
+            ' Create a FileStream for the file
+            Using fs As New FileStream(filePath, FileMode.Open, FileAccess.Write)
+                ' Create the Zone.Identifier alternate data stream
+                Dim zoneIdentifier As String = "[ZoneTransfer]" & vbCrLf & "ZoneId=3"
+                Dim buffer As Byte() = Encoding.ASCII.GetBytes(zoneIdentifier)
+
+                ' Write the content to the alternate data stream
+                fs.Write(buffer, 0, buffer.Length)
+            End Using
 
             Console.WriteLine("File unblocked successfully.")
         Catch ex As Exception
