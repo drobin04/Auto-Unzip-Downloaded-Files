@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Auto-Unzip", "Auto-Unzip.vbproj", "{535E6818-F88F-44D1-8971-C9541BA7D9A7}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Auto-Unzip-Service-Installer", "..\Auto-Unzip-Installer\Auto-Unzip-Installer.vdproj", "{1228C890-0633-496D-9F2A-29187CE6E46D}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Auto-Unzip-Console", "..\Auto-Unzip-Console\Auto-Unzip-Console.vbproj", "{6B33DDD1-2088-407C-8238-4868DD0CA2FE}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Auto-Unzip Console Installer", "..\Auto-Unzip Console Installer\Auto-Unzip Console Installer.vdproj", "{EF6D90EA-22A4-400D-AED1-59EA745F3713}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{535E6818-F88F-44D1-8971-C9541BA7D9A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{535E6818-F88F-44D1-8971-C9541BA7D9A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{535E6818-F88F-44D1-8971-C9541BA7D9A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{535E6818-F88F-44D1-8971-C9541BA7D9A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1228C890-0633-496D-9F2A-29187CE6E46D}.Debug|Any CPU.ActiveCfg = Debug
+		{1228C890-0633-496D-9F2A-29187CE6E46D}.Release|Any CPU.ActiveCfg = Release
+		{6B33DDD1-2088-407C-8238-4868DD0CA2FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B33DDD1-2088-407C-8238-4868DD0CA2FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B33DDD1-2088-407C-8238-4868DD0CA2FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B33DDD1-2088-407C-8238-4868DD0CA2FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF6D90EA-22A4-400D-AED1-59EA745F3713}.Debug|Any CPU.ActiveCfg = Debug
+		{EF6D90EA-22A4-400D-AED1-59EA745F3713}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {04E57A5A-862D-4C42-8B05-7773750840FF}
+	EndGlobalSection
+EndGlobal

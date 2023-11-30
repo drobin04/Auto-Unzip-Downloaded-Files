@@ -1,0 +1,12 @@
+C:\Users\Douglas\Documents\Github Repos\Auto-Unzip\Auto-Unzip\bin\Debug\Auto-Unzip-Service.exe.config
+C:\Users\Douglas\Documents\Github Repos\Auto-Unzip\Auto-Unzip\bin\Debug\Auto-Unzip-Service.exe
+C:\Users\Douglas\Documents\Github Repos\Auto-Unzip\Auto-Unzip\bin\Debug\Auto-Unzip-Service.pdb
+C:\Users\Douglas\Documents\Github Repos\Auto-Unzip\Auto-Unzip\bin\Debug\Auto-Unzip-Service.xml
+C:\Users\Douglas\Documents\Github Repos\Auto-Unzip\Auto-Unzip\obj\Debug\Auto-Unzip.vbproj.AssemblyReference.cache
+C:\Users\Douglas\Documents\Github Repos\Auto-Unzip\Auto-Unzip\obj\Debug\Auto-Unzip.vbproj.SuggestedBindingRedirects.cache
+C:\Users\Douglas\Documents\Github Repos\Auto-Unzip\Auto-Unzip\obj\Debug\Auto_Unzip.Resources.resources
+C:\Users\Douglas\Documents\Github Repos\Auto-Unzip\Auto-Unzip\obj\Debug\Auto-Unzip.vbproj.GenerateResource.cache
+C:\Users\Douglas\Documents\Github Repos\Auto-Unzip\Auto-Unzip\obj\Debug\Auto-Unzip.vbproj.CoreCompileInputs.cache
+C:\Users\Douglas\Documents\Github Repos\Auto-Unzip\Auto-Unzip\obj\Debug\Auto-Unzip-Service.exe
+C:\Users\Douglas\Documents\Github Repos\Auto-Unzip\Auto-Unzip\obj\Debug\Auto-Unzip-Service.xml
+C:\Users\Douglas\Documents\Github Repos\Auto-Unzip\Auto-Unzip\obj\Debug\Auto-Unzip-Service.pdb
