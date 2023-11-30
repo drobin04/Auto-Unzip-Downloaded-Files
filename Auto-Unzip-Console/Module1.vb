@@ -3,6 +3,7 @@ Imports System.Windows.Forms
 Imports System.IO
 Imports System.IO.Compression
 Imports System.ServiceProcess
+Imports System.Text
 
 Module Module1
     Dim notifyIcon As NotifyIcon
@@ -57,6 +58,8 @@ Module Module1
         ' Handle the file creation event
         Dim zipFilePath As String = e.FullPath
 
+        UnblockFile(zipFilePath)
+
         ' Create a folder with the same name as the zip file (without extension)
         Dim destinationFolder As String = Path.Combine(Path.GetDirectoryName(zipFilePath), Path.GetFileNameWithoutExtension(zipFilePath))
 
@@ -76,9 +79,23 @@ Module Module1
         Catch ex As Exception
             ' Handle any exceptions that may occur during the extraction process
             ' Log or display an error message as needed
+            Console.WriteLine(ex.ToString)
+
         End Try
     End Sub
 
+    Public Sub UnblockFile(filePath As String)
+        Try
+            ' Create the Zone.Identifier alternate data stream
+            Dim zoneIdentifier As String = "[ZoneTransfer]" & vbCrLf & "ZoneId=3"
+            File.WriteAllText(filePath & ":Zone.Identifier", zoneIdentifier, Encoding.ASCII)
+
+            Console.WriteLine("File unblocked successfully.")
+        Catch ex As Exception
+            Console.WriteLine("Error unblocking file: " & ex.Message)
+        End Try
+
+    End Sub
 
     Private Sub OpenMenuItem_Click(sender As Object, e As EventArgs)
         ' Add code to open your application or perform any desired action
